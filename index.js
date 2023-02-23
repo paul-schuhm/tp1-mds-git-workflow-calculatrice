@@ -4,16 +4,13 @@
 function sumOp(){
     var nbleft = document.getElementById('left-operand').value
     var nbright = document.getElementById('right-operand').value
-    console.log(nbleft)
-    console.log(nbright)
     var res = parseInt(nbleft) + parseInt(nbright)
-    //return res
-    display(res)
+    printResult(res)
 }
 
 /**
  * display the result to the user
  */
-function display(result){
+function printResult(result){
     document.getElementById('result').innerText = result
 }
