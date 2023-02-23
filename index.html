@@ -8,6 +8,7 @@
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Démo Git workflow</title>
+        <script type="text/javascript" src="index.js"></script>
     </head>
 
     <body>
@@ -28,8 +29,8 @@
                     <p>Une application en ligne développée par ...</p>
                 </header>
 
-                <input type="number" name="left-operand" id="left-operand" value="1"> <span id="operator">+</span>
-                <input type="number" name="right-operand" id="right-operand" value="1"> <span>=</span> <span
+                <input type="number" name="left-operand" id="left-operand" value="1" onchange="sumOp()"> <span id="operator">+</span>
+                <input type="number" name="right-operand" id="right-operand" value="1" onchange="sumOp()"> <span>=</span> <span
                     id="result">?</span>
 
             </section>
