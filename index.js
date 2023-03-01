@@ -1,24 +1,26 @@
 let leftOperation = document.getElementById("left-operand")
 let rightOperation = document.getElementById("right-operand")
-let result = document.getElementById("result")
 
-result.innerHTML = parseInt(leftOperation.value) + parseInt(rightOperation.value);
-
-
-leftOperation.addEventListener("change", ($event) => {
-  if($event.target.value){
-    result.innerHTML = parseInt($event.target.value) + parseInt(rightOperation.value);
-  }else{
-    leftOperation.value = 0
-    result.innerHTML = parseInt($event.target.value) + parseInt(rightOperation.value);
+const verify = (value) => {
+  if(value){
+    return parseInt(value)
   }
-})
+  return 0
+}
 
-rightOperation.addEventListener("change", ($event) => {
-  if($event.target.value){
-    result.innerHTML = parseInt($event.target.value) + parseInt(leftOperation.value);
-  }else{
-    rightOperation.value = 0
-    result.innerHTML = parseInt($event.target.value) + parseInt(leftOperation.value);
-  }
-})
+const writeResult = (value) => {
+  let result = document.getElementById("result")
+  result.innerHTML = value
+}
+
+const calculate = () => {
+  let leftValue = leftOperation.value
+  let rightValue = rightOperation.value
+  let value = verify(leftValue) + verify(rightValue)
+  writeResult(value)
+}
+
+calculate()
+
+leftOperation.addEventListener("change", () => calculate())
+rightOperation.addEventListener("change", () => calculate())
