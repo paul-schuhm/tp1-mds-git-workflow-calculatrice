@@ -28,8 +28,20 @@
                     <p>Une application en ligne développée par ...</p>
                 </header>
 
-                <input type="number" name="left-operand" id="left-operand" value="1"> <span id="operator">+</span>
-                <input type="number" name="right-operand" id="right-operand" value="1"> <span>=</span> <span
+                <input type="number" name="left-operand" id="left-operand" value="1" onchange
+                onpropertychange
+                onkeyuponpaste oninput="Calcul()"> 
+                <select name="operators" id="ope-select" onchange
+                onpropertychange
+                onkeyuponpaste oninput="Calcul()">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="number" name="right-operand" id="right-operand" value="1" onchange
+                onpropertychange
+                onkeyuponpaste oninput="Calcul()"> <span>=</span> <span
                     id="result">?</span>
 
             </section>
@@ -48,10 +60,18 @@
             {
                 var nb1 = document.getElementById('left-operand').value;
                 var nb2 = document.getElementById('right-operand').value;
-
+                var ope = document.getElementById('ope-select').value;
                 var res = document.getElementById('result');
-
-                res.textContent = Number(nb1) + Number(nb2);
+                
+                if(ope === '+'){
+                    res.textContent = Number(nb1) + Number(nb2);
+                }else if(ope === '-'){
+                    res.textContent = Number(nb1) - Number(nb2);
+                }else if(ope === '*'){
+                    res.textContent = Number(nb1) * Number(nb2);
+                }else if(ope === '/'){
+                    res.textContent = Number(nb1) / Number(nb2);
+                }
             }
         </script>
     </body>
