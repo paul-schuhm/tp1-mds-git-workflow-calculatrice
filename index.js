@@ -4,9 +4,9 @@ operands.forEach((operand) => {
     operand.addEventListener('input', ()=>{
         let res = 0;
         operands.forEach((operandCalc)=>{
-            console.log(operandCalc)
-            res += operandCalc.valueAsNumber;
+            
+            res += !isNaN(operandCalc.valueAsNumber) ? operandCalc.valueAsNumber : 0 ;
         })
-        document.querySelector('#result').innerHTML = res;
+            document.querySelector('#result').innerHTML = res;
     })
 })
