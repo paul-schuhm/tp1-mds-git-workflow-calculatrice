@@ -68,6 +68,10 @@
         } else if (operator == '*') {
             result.innerHTML = parseInt(leftOperand) * parseInt(rightOperand);
         } else if (operator == '/') {
+            if (rightOperand == 0) {
+                result.innerHTML = "Erreur";
+                return;
+            }
             result.innerHTML = parseInt(leftOperand) / parseInt(rightOperand);
         }
     }
