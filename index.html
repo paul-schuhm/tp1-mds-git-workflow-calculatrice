@@ -29,7 +29,6 @@
                 </header>
 
                 <input type="number" name="left-operand" id="left-operand" value="1" onchange="calcul()"> 
-                <input type="number" name="left-operand" id="operator" value="1" onchange="calcul()">
                 <select name="operator" id="operator" onchange="calcul()">
                     <option value="+">+</option>
                     <option value="-">-</option>
@@ -60,8 +59,16 @@
         let leftOperand = document.getElementById('left-operand').value;
         let rightOperand = document.getElementById('right-operand').value;
         let result = document.getElementById('result');
+        let operator = document.getElementById('operator').value;
 
-        let res = parseInt(leftOperand) + parseInt(rightOperand);
-        result.innerHTML = res;
+        if (operator == '+') {
+            result.innerHTML = parseInt(leftOperand) + parseInt(rightOperand);
+        } else if (operator == '-') {
+            result.innerHTML = parseInt(leftOperand) - parseInt(rightOperand);
+        } else if (operator == '*') {
+            result.innerHTML = parseInt(leftOperand) * parseInt(rightOperand);
+        } else if (operator == '/') {
+            result.innerHTML = parseInt(leftOperand) / parseInt(rightOperand);
+        }
     }
 </script>
