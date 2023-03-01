@@ -25,11 +25,11 @@
 
                 <header>
                     <h2>Calculatrice en ligne</h2>
-                    <p>Une application en ligne développée par ...</p>
+                    <p>Une application en ligne développée par Justine Le Nautout</p>
                 </header>
 
-                <input type="number" name="left-operand" id="left-operand" value="1"> <span id="operator">+</span>
-                <input type="number" name="right-operand" id="right-operand" value="1"> <span>=</span> <span
+                <input type="number" name="left-operand" id="left-operand" value="1" onchange="Calculator()"> <span id="operator">+</span>
+                <input type="number" name="right-operand" id="right-operand" value="1" onchange="Calculator()"> <span>=</span> <span
                     id="result">?</span>
 
             </section>
@@ -43,6 +43,14 @@
         <footer>
             Le footer
         </footer>
+        <script type="text/javascript">
+            function Calculator() {
+                var number1 = document.getElementById("left-operand").value;
+                var number2 = document.getElementById("right-operand").value;
+                var result = Number(number1) + Number(number2);
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>
 
     </body>
 
