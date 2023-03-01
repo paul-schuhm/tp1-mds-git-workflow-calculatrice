@@ -28,7 +28,14 @@
                     <p>Une application en ligne développée par Samuel Cottarel</p>
                 </header>
 
-                <input type="number" name="left-operand" id="left-operand" value="1" onchange="calcul()"> <span id="operator">+</span>
+                <input type="number" name="left-operand" id="left-operand" value="1" onchange="calcul()"> 
+                <input type="number" name="left-operand" id="operator" value="1" onchange="calcul()">
+                <select name="operator" id="operator" onchange="calcul()">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">*</option>
+                </select>
                 <input type="number" name="right-operand" id="right-operand" value="1" onchange="calcul()"> <span>=</span> <span
                     id="result">?</span>
 
