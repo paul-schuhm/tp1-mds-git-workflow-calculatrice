@@ -3,9 +3,9 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="">
+        <meta name="description" content="Website to perform operations">
+        <meta name="keywords" content="calculator">
+        <meta name="author" content="Samuel Cottarel">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Démo Git workflow</title>
     </head>
@@ -25,11 +25,17 @@
 
                 <header>
                     <h2>Calculatrice en ligne</h2>
-                    <p>Une application en ligne développée par ...</p>
+                    <p>Une application en ligne développée par Samuel Cottarel</p>
                 </header>
 
-                <input type="number" name="left-operand" id="left-operand" value="1"> <span id="operator">+</span>
-                <input type="number" name="right-operand" id="right-operand" value="1"> <span>=</span> <span
+                <input type="number" name="left-operand" id="left-operand" value="1" onchange="calcul()"> 
+                <select name="operator" id="operator" onchange="calcul()">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                    <option value="*">*</option>
+                </select>
+                <input type="number" name="right-operand" id="right-operand" value="1" onchange="calcul()"> <span>=</span> <span
                     id="result">?</span>
 
             </section>
@@ -47,3 +53,26 @@
     </body>
 
 </html>
+
+<script>
+    function calcul() {
+        let leftOperand = document.getElementById('left-operand').value;
+        let rightOperand = document.getElementById('right-operand').value;
+        let result = document.getElementById('result');
+        let operator = document.getElementById('operator').value;
+
+        if (operator == '+') {
+            result.innerHTML = parseInt(leftOperand) + parseInt(rightOperand);
+        } else if (operator == '-') {
+            result.innerHTML = parseInt(leftOperand) - parseInt(rightOperand);
+        } else if (operator == '*') {
+            result.innerHTML = parseInt(leftOperand) * parseInt(rightOperand);
+        } else if (operator == '/') {
+            if (rightOperand == 0) {
+                result.innerHTML = "Erreur";
+                return;
+            }
+            result.innerHTML = parseInt(leftOperand) / parseInt(rightOperand);
+        }
+    }
+</script>
