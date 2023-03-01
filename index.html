@@ -50,6 +50,11 @@
 
 <script>
     function calcul() {
-        // TODO
+        let leftOperand = document.getElementById('left-operand').value;
+        let rightOperand = document.getElementById('right-operand').value;
+        let result = document.getElementById('result');
+
+        let res = parseInt(leftOperand) + parseInt(rightOperand);
+        result.innerHTML = res;
     }
 </script>
