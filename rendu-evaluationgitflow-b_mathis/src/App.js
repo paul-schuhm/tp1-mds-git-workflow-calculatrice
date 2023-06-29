@@ -56,7 +56,7 @@ function App() {
         <section>
 
             <header>
-                <h2>Calculatrice en ligne</h2>
+                <h2 >Calculatrice en ligne</h2>
                 <p>Une application en ligne développée par ...</p>
             </header>
 
