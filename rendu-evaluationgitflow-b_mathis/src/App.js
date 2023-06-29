@@ -9,8 +9,24 @@ function App() {
     const [result, setResult] = useState(leftOperand + rightOperand)
 
     useEffect(() => {
-        setResult(leftOperand + rightOperand)
-    }, [leftOperand, rightOperand])
+        switch (operator) {
+            case '+':
+                setResult(leftOperand + rightOperand)
+                break
+            case '-':
+                setResult(leftOperand - rightOperand)
+                break
+            case '*':
+                setResult(leftOperand * rightOperand)
+                break
+            case '/':
+                setResult(leftOperand / rightOperand)
+                break
+            default:
+                setResult(leftOperand + rightOperand)
+                break
+        }
+    }, [leftOperand, rightOperand, operator])
 
     const handleLeftOperandChange = (event) => {
         setLeftOperand(parseInt(event.target.value))
