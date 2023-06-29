@@ -42,7 +42,7 @@ function App() {
         setOperator(event.target.value)
     }
 
-    return (<div className={"from-indigo-500 via-purple-500 to-pink-500"}>
+    return (<div className={" h-screen w-screen overflow-x-hidden "}>
         <div className={"flex flex-row justify-between bg-gray-800 p-8 text-white text-4xl"}>
             <h1>TP: Git workflow</h1>
             <nav className="flex flex-row gap-8">
@@ -51,11 +51,9 @@ function App() {
             </nav>
         </div>
 
-        <body>
 
-        <section>
 
-            <div className={"h-screen w-screen flex flex-col   bg-gradient-to-r "}>
+            <div className={" flex flex-col  bg-gradient-to-r h-screen from-indigo-500 via-purple-500 to-pink-500 "}>
                 <header className={"mx-auto mt-24 mb-32 text-4xl text-center text-white"}>
                     <h2 className={"mb-3"}>Calculatrice en ligne</h2>
                     <p>Une application en ligne développée par Mathis le Dev</p>
@@ -76,10 +74,6 @@ function App() {
 
                 </div>
             </div>
-
-        </section>
-
-        </body>
 
         <footer className={"bg-gray-800 text-center py-10 text-4xl text-white"}>
             Le footer
