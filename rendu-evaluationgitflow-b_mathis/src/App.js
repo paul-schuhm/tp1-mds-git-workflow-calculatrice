@@ -3,8 +3,8 @@ import './App.css';
 import {useEffect, useState} from "react";
 
 function App() {
-    const [leftOperand, setLeftOperand] = useState(1)
-    const [rightOperand, setRightOperand] = useState(1)
+    const [leftOperand, setLeftOperand] = useState(1.0)
+    const [rightOperand, setRightOperand] = useState(1.0)
     const [operator, setOperator] = useState('+')
     const [result, setResult] = useState(leftOperand + rightOperand)
 
@@ -29,12 +29,14 @@ function App() {
     }, [leftOperand, rightOperand, operator])
 
     const handleLeftOperandChange = (event) => {
-        setLeftOperand(parseInt(event.target.value))
-    }
+        const value = parseFloat(event.target.value);
+        setLeftOperand(value);
+    };
 
     const handleRightOperandChange = (event) => {
-        setRightOperand(parseInt(event.target.value))
-    }
+        const value = parseFloat(event.target.value);
+        setRightOperand(value);
+    };
 
     const handleOperatorChange = (event) => {
         setOperator(event.target.value)
