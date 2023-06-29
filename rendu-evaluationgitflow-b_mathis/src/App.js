@@ -6,14 +6,18 @@ function App() {
     const [leftOperand, setLeftOperand] = useState(1)
     const [rightOperand, setRightOperand] = useState(1)
     const [operator, setOperator] = useState('+')
+    const [result, setResult] = useState(leftOperand + rightOperand)
 
+    useEffect(() => {
+            setResult(leftOperand + rightOperand)
+        }, [leftOperand, rightOperand])
 
     const handleLeftOperandChange = (event) => {
-        setLeftOperand(event.target.value)
+        setLeftOperand(parseInt(event.target.value))
     }
 
     const handleRightOperandChange = (event) => {
-        setRightOperand(event.target.value)
+        setRightOperand(parseInt(event.target.value))
     }
 
     return (<div>
@@ -35,7 +39,7 @@ function App() {
                 </header>
 
                 <input type="number" value={leftOperand} onChange={handleLeftOperandChange}/><span>{operator}</span>
-                <input type="number" value={rightOperand} onChange={handleRightOperandChange}/><span>=</span> <span>?</span>
+                <input type="number" value={rightOperand} onChange={handleRightOperandChange}/><span>=</span> <span>{result}</span>
 
             </section>
 
