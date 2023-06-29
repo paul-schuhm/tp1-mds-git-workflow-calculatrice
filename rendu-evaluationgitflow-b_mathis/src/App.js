@@ -59,18 +59,20 @@ function App() {
                 <p>Une application en ligne développée par ...</p>
             </header>
             <div className={"h-screen w-screen flex flex-col  justify-center bg-gradient-to-r "}>
-                <div className={"mx-auto bg-green-500 w-[40vw] flex flex-col gap-32"}>
-                    <span className={" bg-blue-500 text-end px-8 text-3xl"}>{result}</span>
-                <div className={" bg-blue-500 flex flex-row "}>
-                    <input type="number" value={leftOperand} onChange={handleLeftOperandChange} className={"w-1/2 px-3 text-3xl"}/>
-                    <select value={operator} onChange={handleOperatorChange} className={"p-3"}>
+                <div className={"mx-auto w-[40vw] flex flex-col gap-32"}>
+                    <span className={"text-end px-8 text-5xl py-4 rounded-full bg-gray-800 text-white text-4xl"}>{result}</span>
+                <div className={"rounded-full bg-gray-800 text-white flex flex-row text-4xl "}>
+                    <input type="number" value={leftOperand} onChange={handleLeftOperandChange} className={"w-1/2 bg-transparent px-10 "}/>
+                    <select value={operator} onChange={handleOperatorChange} className={"p-3 bg-transparent"}>
                         <option value="+">+</option>
                         <option value="-">-</option>
                         <option value="*">*</option>
                         <option value="/">/</option>
                     </select>
-                    <input type="number" value={rightOperand} onChange={handleRightOperandChange} className={"px-3 w-1/2 text-3xl"}/>
+                    <input type="number" value={rightOperand} onChange={handleRightOperandChange} className={"px-10 w-1/2 bg-transparent text-end "}/>
+
                 </div>
+
                 </div>
             </div>
 
