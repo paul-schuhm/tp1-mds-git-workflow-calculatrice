@@ -62,14 +62,14 @@ function App() {
                 <div className={"mx-auto w-[40vw] flex flex-col gap-32"}>
                     <span className={"text-end px-8 text-5xl py-4 rounded-full bg-gray-800 text-white text-4xl"}>{result}</span>
                 <div className={"rounded-full bg-gray-800 text-white flex flex-row text-4xl "}>
-                    <input type="number" value={leftOperand} onChange={handleLeftOperandChange} className={"w-1/2 bg-transparent px-10 "}/>
+                    <input type="number" value={leftOperand} onChange={handleLeftOperandChange} className="w-1/2 bg-transparent px-10 focus:outline-none" />
                     <select value={operator} onChange={handleOperatorChange} className={"p-3 bg-transparent"}>
-                        <option value="+">+</option>
-                        <option value="-">-</option>
-                        <option value="*">*</option>
-                        <option value="/">/</option>
+                        <option value="+" className={" bg-gray-800"}>+</option>
+                        <option value="-" className={" bg-gray-800"}>-</option>
+                        <option value="*" className={" bg-gray-800"}>*</option>
+                        <option value="/" className={" bg-gray-800"}>/</option>
                     </select>
-                    <input type="number" value={rightOperand} onChange={handleRightOperandChange} className={"px-10 w-1/2 bg-transparent text-end "}/>
+                    <input type="number" value={rightOperand} onChange={handleRightOperandChange} className={"px-10 w-1/2 bg-transparent text-end focus:outline-none"}/>
 
                 </div>
 
