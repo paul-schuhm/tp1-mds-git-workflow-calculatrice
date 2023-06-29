@@ -42,7 +42,7 @@ function App() {
         setOperator(event.target.value)
     }
 
-    return (<div>
+    return (<div className={"from-indigo-500 via-purple-500 to-pink-500"}>
         <header>
             <h1>TP: Git workflow</h1>
             <nav className="navbar">
@@ -54,21 +54,25 @@ function App() {
         <body>
 
         <section>
-
             <header>
-                <h2 >Calculatrice en ligne</h2>
+                <h2>Calculatrice en ligne</h2>
                 <p>Une application en ligne développée par ...</p>
             </header>
-
-            <input type="number" value={leftOperand} onChange={handleLeftOperandChange}/>
-            <select value={operator} onChange={handleOperatorChange}>
-                <option value="+">+</option>
-                <option value="-">-</option>
-                <option value="*">*</option>
-                <option value="/">/</option>
-            </select>
-            <input type="number" value={rightOperand} onChange={handleRightOperandChange}/><span>=</span>
-            <span>{result}</span>
+            <div className={"h-screen w-screen flex flex-col  justify-center bg-gradient-to-r "}>
+                <div className={"mx-auto bg-green-500 w-[40vw] flex flex-col gap-32"}>
+                    <span className={" bg-blue-500 text-end px-8 text-3xl"}>{result}</span>
+                <div className={" bg-blue-500 flex flex-row "}>
+                    <input type="number" value={leftOperand} onChange={handleLeftOperandChange} className={"w-1/2 px-3 text-3xl"}/>
+                    <select value={operator} onChange={handleOperatorChange} className={"p-3"}>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                    <input type="number" value={rightOperand} onChange={handleRightOperandChange} className={"px-3 w-1/2 text-3xl"}/>
+                </div>
+                </div>
+            </div>
 
         </section>
 
