@@ -9,8 +9,8 @@ function App() {
     const [result, setResult] = useState(leftOperand + rightOperand)
 
     useEffect(() => {
-            setResult(leftOperand + rightOperand)
-        }, [leftOperand, rightOperand])
+        setResult(leftOperand + rightOperand)
+    }, [leftOperand, rightOperand])
 
     const handleLeftOperandChange = (event) => {
         setLeftOperand(parseInt(event.target.value))
@@ -18,6 +18,10 @@ function App() {
 
     const handleRightOperandChange = (event) => {
         setRightOperand(parseInt(event.target.value))
+    }
+
+    const handleOperatorChange = (event) => {
+        setOperator(event.target.value)
     }
 
     return (<div>
@@ -31,17 +35,24 @@ function App() {
 
         <body>
 
-            <section>
+        <section>
 
-                <header>
-                    <h2>Calculatrice en ligne</h2>
-                    <p>Une application en ligne développée par ...</p>
-                </header>
+            <header>
+                <h2>Calculatrice en ligne</h2>
+                <p>Une application en ligne développée par ...</p>
+            </header>
 
-                <input type="number" value={leftOperand} onChange={handleLeftOperandChange}/><span>{operator}</span>
-                <input type="number" value={rightOperand} onChange={handleRightOperandChange}/><span>=</span> <span>{result}</span>
+            <input type="number" value={leftOperand} onChange={handleLeftOperandChange}/>
+            <select value={operator} onChange={handleOperatorChange}>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="number" value={rightOperand} onChange={handleRightOperandChange}/><span>=</span>
+            <span>{result}</span>
 
-            </section>
+        </section>
 
         </body>
 
